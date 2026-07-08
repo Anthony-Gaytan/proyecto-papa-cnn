@@ -1,0 +1,22 @@
+venv/
+dataset/
+dataset_split/
+spark/output/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+*.log
+.DS_Store
+Thumbs.db
+
+# El modelo original se conserva localmente, pero supera el limite normal de GitHub.
+resultados/modelo_papa_cnn.h5
+
+# Conversiones de prueba no usadas para despliegue.
+resultados/modelo_papa_cnn.tflite
+resultados/modelo_papa_cnn_quant.tflite

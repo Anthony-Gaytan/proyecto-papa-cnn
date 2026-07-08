@@ -1,0 +1,16 @@
+venv/
+dataset/
+dataset_split/
+spark/output/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.git/
+.gitignore
+docker/
+resultados/*.png
+resultados/*.txt
+resultados/metrics.json
+resultados/modelo_papa_cnn.h5

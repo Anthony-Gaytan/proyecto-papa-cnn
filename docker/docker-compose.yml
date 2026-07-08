@@ -1,0 +1,30 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/backend.Dockerfile
+    container_name: papa-cnn-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../resultados:/app/resultados:ro
+    networks:
+      - papa-cnn-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/frontend.Dockerfile
+    container_name: papa-cnn-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - papa-cnn-network
+    restart: unless-stopped
+
+networks:
+  papa-cnn-network:
+    driver: bridge

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detección de Enfermedades en Hojas de Papa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="intro">
+            <div>
+                <p class="eyebrow">Modelo CNN</p>
+                <h1>Detección de enfermedades en hojas de papa</h1>
+                <p class="description">
+                    Sube una imagen de una hoja de papa para consultar el modelo entrenado y obtener la clase predicha con sus probabilidades.
+                </p>
+            </div>
+            <div class="api-status" id="apiStatus">API: http://127.0.0.1:8000</div>
+        </section>
+
+        <section class="workspace">
+            <div class="upload-panel">
+                <label class="upload-box" for="imageInput">
+                    <span class="upload-title">Seleccionar imagen</span>
+                    <span class="upload-subtitle">Formatos admitidos: JPG, JPEG o PNG</span>
+                    <input type="file" id="imageInput" accept="image/jpeg,image/png">
+                </label>
+
+                <div class="preview-frame" id="previewFrame">
+                    <img id="previewImage" alt="Vista previa de la hoja seleccionada">
+                    <span id="previewPlaceholder">La vista previa aparecerá aquí</span>
+                </div>
+
+                <button type="button" id="analyzeButton" disabled>Analizar imagen</button>
+                <p class="status-message" id="statusMessage"></p>
+            </div>
+
+            <div class="result-panel" id="resultPanel">
+                <div class="empty-state" id="emptyState">
+                    <h2>Resultado</h2>
+                    <p>Selecciona una imagen y ejecuta el análisis para ver la predicción.</p>
+                </div>
+
+                <div class="result-content hidden" id="resultContent">
+                    <p class="result-label">Clase predicha</p>
+                    <h2 id="predictedClass">-</h2>
+                    <p class="confidence" id="confidenceText">-</p>
+                    <p class="interpretation" id="interpretationText"></p>
+
+                    <div class="probabilities" id="probabilities"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
